@@ -33,9 +33,9 @@ if ingredents_list:
         ingredient_string += each_fruit + ' '
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == each_fruit, 'SEARCH_ON'].iloc[0]
         st.write('The search value for ', each_fruit,' is ', search_on, '.')
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+search_on)
-        st.write("fruit information "+each_fruit)
-        st.dataframe(data=fruityvice_response.json(),use_container_width=True)
+        #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+search_on)
+        #st.write("fruit information "+each_fruit)
+        #st.dataframe(data=fruityvice_response.json(),use_container_width=True)
     #st.write(ingredient_string)
     my_insert_stmt = """ INSERT INTO SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order) VALUES 
        ('""" + ingredient_string + """ ','""" + name_on_smoothie + """')"""
