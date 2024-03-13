@@ -38,7 +38,7 @@ if ingredents_list:
         #st.dataframe(data=fruityvice_response.json(),use_container_width=True)
     #st.write(ingredient_string)
     my_insert_stmt = """ INSERT INTO SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order) VALUES 
-       ('""" + ingredient_string + """ ','""" + name_on_smoothie + """')"""
+       ('""" + ingredient_string + """','""" + name_on_smoothie + """')"""
     st.write(my_insert_stmt)
     submit_order=st.button("submit order")
     if submit_order:
