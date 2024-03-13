@@ -19,8 +19,8 @@ my_dataframe = session.table("smoothies.public.FRUIT_OPTIONS").select('FRUIT_NAM
 #st.dataframe(data=my_dataframe, use_container_width=True)
 #st.stop()
 pd_df=my_dataframe.to_pandas()
-st.dataframe(pd_df)
-st.stop()
+#st.dataframe(pd_df)
+#st.stop()
 ingredents_list = st.multiselect(
     'What are your favorite fruits',
      my_dataframe,
