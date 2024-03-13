@@ -28,7 +28,8 @@ if ingredents_list:
     ingredient_string = ''
     for each_fruit in ingredents_list:
         ingredient_string += each_fruit + ' '
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+each_fruit)
+        st.write("fruit information "+each_fruit)
         st.dataframe(data=fruityvice_response.json(),use_container_width=True)
     #st.write(ingredient_string)
     my_insert_stmt = """ INSERT INTO SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order) VALUES 
