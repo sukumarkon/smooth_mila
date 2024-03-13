@@ -4,6 +4,10 @@ from snowflake.snowpark.functions import col
 
 # Write directly to the app
 st.title("Example Streamlit App :cup_with_straw:")
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.dataframe(data=fruityvice_response.json(),use_container_width=True)
+'''
 st.write(
     """Replace this example with your own code!
     **And if you're new to Streamlit,** check
@@ -34,5 +38,5 @@ if ingredents_list:
     submit_order=st.button("submit order")
     if submit_order:
         session.sql(my_insert_stmt).collect()
-        
+'''        
     
